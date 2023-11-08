@@ -1,0 +1,117 @@
+@import url(./fonts.scss);
+
+@import "bootstrap/scss/bootstrap";
+
+:root {
+    --primary-color: #4158D0;
+    --secondary-color: #C850C0;
+    --tertiary-color: #FFCC70;
+    --quarternary-color: #ffa5a5;
+
+    --border: #000;
+
+    --title-color: #000;
+    --text-color: #fff;
+}
+
+/* https://colorhunt.co/palette/9adcfffff89affb2a6ff8aae */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+html, body, #root {
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(45deg, #4158D0 0%, #C850C0 50%, #FFCC70 100%);
+}
+
+html, body {
+    overflow-y: hidden;
+}
+
+body {
+    overflow: overlay;
+}
+
+#root {
+    overflow-y: scroll;
+    transition: all 0.2s ease-in-out;
+}
+
+h1, h2, h3, p, span, a, button, textarea, input {
+    font: 400 1.8rem/1.22 'GT Flexa', sans-serif;
+}
+
+h1, h2, h3 {
+    color: var(--title-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-variation-settings: "wght" 898,"wdth" 42;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+input, textarea, .input-group-text {
+    background-color: #ffffff55 !important;
+    backdrop-filter: blur(5px) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.input-group-text {
+    box-shadow: none;
+}
+
+/* Custom classes */
+.cel-shadow {
+    border: 1px solid var(--border);
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    position: absolute;
+    width: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    display: none;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ffffff55;
+    border-radius: 5px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffffaa;
+}
