@@ -17,7 +17,7 @@ const Component = () => {
         <Page className="justify-content-center align-items-center position-relative overflow-x-hidden">
             <section className="position-absolute d-flex justify-content-center align-items-center flex-column">
                 <h1 className="lh-1" style={{ fontSize: '8rem', margin: 0 }}>Get B0NKed up!</h1>
-                <Button style={{ padding: '1rem', width: 'min', color: "#fffd01"}} to='/products'>Buy Now</Button>
+                <Button style={{ padding: '1rem', width: 'min', color: "#000"}} to='/products'>Buy Now</Button>
             </section>
             <div
                 className="position-absolute w-100 d-flex justify-content-center align-items-center flex-column"

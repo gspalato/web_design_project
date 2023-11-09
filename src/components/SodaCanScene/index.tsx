@@ -3,6 +3,7 @@ import { Canvas  } from '@react-three/fiber'
 import SodaCan from './SodaCan';
 import { motion } from 'framer-motion-3d';
 import { MotionValue } from 'framer-motion';
+import { Environment } from '@react-three/drei'
 
 type SodaCanSceneProps = {
     className?: string;
@@ -15,9 +16,9 @@ const Component: React.FC<SodaCanSceneProps> = forwardRef((props, ref) => {
 
     return (
         <Canvas shadows className={className} style={style}>
-            <motion.directionalLight castShadow intensity={2} position={[10, 10, 10]} color={color} />
-            <motion.directionalLight castShadow intensity={2} position={[10, 0, 10]} color={color} />
-            <motion.directionalLight castShadow intensity={2} position={[0, 0, 10]} color={color} />
+            <motion.directionalLight castShadow intensity={1.2} position={[10, 10, 10]} color={color} />
+            <motion.directionalLight castShadow intensity={1.2} position={[10, 0, 10]} color={color} />
+            <motion.directionalLight castShadow intensity={1.2} position={[0, 0, 10]} color={color} />
             <SodaCan />
         </Canvas>
     )

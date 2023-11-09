@@ -29,6 +29,8 @@ const Component: React.FC<ButtonProps> = (props) => {
             form={form}
             onClick={handleClick}
             style={style}
+            whileTap={{ transform: 'translate(5px, 5px)', boxShadow: '0px 0px 0px 0px rgba(0, 0, 0, 1)' }}
+            transition={{ duration: 0.1 }}
             {...rest}
         >
             {children}
