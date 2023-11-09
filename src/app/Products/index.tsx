@@ -2,13 +2,16 @@ import Page from "@/components/Page";
 import SodaCanScene from "@/components/SodaCanScene";
 import { useEffect, useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Mousewheel } from 'swiper/modules'
 import 'swiper/css';
 import { useBackground } from "@/lib/providers/BackgroundProvider";
 import { useSpring } from "@react-spring/three";
 import { useCan } from "@/lib/providers/CanProvider";
-import { useMotionValue, useMotionValueEvent, useTransform } from "framer-motion";
+import { motion, useMotionValue, useMotionValueEvent, useTransform } from "framer-motion";
 import Button from "@/components/Button";
 import { RICK_ROLL } from "@/constants";
+import { Carousel } from "bootstrap";
+import CarouselButton from "./CarouselButton";
 
 const flavors = [
     {
@@ -50,8 +53,6 @@ const flavors = [
 ]
 
 const Component = () => {
-    const [index, setIndex] = useState(0);
-
     const { setBackground, resetBackground } = useBackground();
 
     const swipeProgress = useMotionValue(0);
@@ -63,7 +64,6 @@ const Component = () => {
     );
     
     const handleSelect = (k: number) => {
-        setIndex(k);
         setBackground(flavors[k].background);
     }
 
@@ -81,6 +81,7 @@ const Component = () => {
     return (
         <Page>
             <Swiper
+                modules={[ Mousewheel ]}
                 spaceBetween={100}
                 slidesPerView={1}
                 onSlideChange={(swiper) => handleSelect(swiper.activeIndex)}
@@ -88,6 +89,7 @@ const Component = () => {
                 onProgress={(swiper) => swipeProgress.set(swiper.progress)}
                 pagination={{ clickable: true }}
                 className="position-absolute w-100 h-100 d-flex justify-content-center align-items-center"
+                style={{ cursor: 'grab' }}
             >
                 {
                     flavors.map((flavor, i) => (
