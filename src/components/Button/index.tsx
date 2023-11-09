@@ -28,6 +28,7 @@ const Component: React.FC<ButtonProps> = (props) => {
             type={type}
             form={form}
             onClick={handleClick}
+            style={style}
             {...rest}
         >
             {children}

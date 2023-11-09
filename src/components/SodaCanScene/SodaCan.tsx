@@ -2,23 +2,11 @@ import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react"
 import { useLoader } from '@react-three/fiber'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
-import { Mesh, MeshStandardMaterial, Vector3 } from "three";
+import { Mesh, MeshPhysicalMaterial, MeshStandardMaterial, Vector3 } from "three";
 
-const Component = () => {
+const Component: React.FC = () => {
     const model = useLoader(OBJLoader, '/models/sodacan.obj', undefined, (p) => console.log(p));
-    const material = new MeshStandardMaterial({ color: 0xffffff, metalness: 1 });
-
-    const geometry = useMemo(() => {
-        let g;
-        model.traverse((c: any) => {
-            if (c.type === "Mesh") {
-                const _c = c as Mesh;
-                g = _c.geometry;
-            }
-        });
-
-        return g;
-    }, [model]);
+    const material = new MeshPhysicalMaterial({ color: 0xffffff, metalness: 1, sheen: 1, specularIntensity: .25 });
 
     const mesh = useRef<any>();
 

@@ -1,0 +1,1 @@
+export const MAIN_CAN_COLOR = "#C850C0";

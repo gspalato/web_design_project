@@ -3,6 +3,8 @@
 @import "bootstrap/scss/bootstrap";
 
 :root {
+    --background: linear-gradient(45deg, #4158D0 0%, #C850C0 50%, #FFCC70 100%);
+
     --primary-color: #4158D0;
     --secondary-color: #C850C0;
     --tertiary-color: #FFCC70;
@@ -10,11 +12,11 @@
 
     --border: #000;
 
-    --title-color: #000;
+    --title-color: #fffd01;
     --text-color: #fff;
-}
 
-/* https://colorhunt.co/palette/9adcfffff89affb2a6ff8aae */
+    --scrollbar-width: 5px;
+}
 
 * {
     margin: 0;
@@ -32,7 +34,8 @@ html, body, #root {
     height: 100%;
     width: 100%;
 
-    background: linear-gradient(45deg, #4158D0 0%, #C850C0 50%, #FFCC70 100%);
+    background: var(--background);
+    transition: all 1s ease-in-out;
 }
 
 html, body {
@@ -45,14 +48,19 @@ body {
 
 #root {
     overflow-y: scroll;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
-h1, h2, h3, p, span, a, button, textarea, input {
+header {
+    width: calc(100vw - var(--scrollbar-width)) !important;
+    margin-right: var(--scrollbar-width);
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, button, textarea, input {
     font: 400 1.8rem/1.22 'GT Flexa', sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     color: var(--title-color);
     text-transform: uppercase;
     font-weight: 700;
@@ -97,7 +105,7 @@ input, textarea, .input-group-text {
 
 ::-webkit-scrollbar {
     position: absolute;
-    width: 5px;
+    width: var(--scrollbar-width);
 }
   
 /* Track */

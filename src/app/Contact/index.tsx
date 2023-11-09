@@ -1,7 +1,17 @@
 import Button from "@/components/Button";
 import Page from "@/components/Page";
+import { useCan } from "@/lib/providers/CanProvider";
+import { useEffect } from "react";
 
 const Component = () => {
+    const { setVisible } = useCan();
+
+    useEffect(() => {
+        setVisible(false);
+
+        return () => setVisible(true);
+    }, []);
+    
     return (
         <Page className="d-flex align-items-center justify-content-center flex-column w-100 gap-2">
                 <h2>send us your suggestions</h2>
