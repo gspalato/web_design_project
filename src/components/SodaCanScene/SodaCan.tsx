@@ -1,14 +1,19 @@
-import { useFrame } from "@react-three/fiber";
-import { useRef } from "react"
-import { useLoader } from '@react-three/fiber'
+import { useFrame, useLoader } from "@react-three/fiber";
+import { useRef, useState } from "react"
+import { Text } from '@react-three/drei';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
-import { MeshPhysicalMaterial,  Vector3 } from "three";
+import { MeshPhysicalMaterial, Vector3 } from "three";
 import { RGBELoader } from "three/examples/jsm/Addons.js";
+import { motion } from "framer-motion-3d";
 
 const Component: React.FC = () => {
-    const model = useLoader(OBJLoader, '/models/sodacan.obj', undefined, (p) => console.log(p));
+    const [progress, setProgress] = useState(0);
+    const model = useLoader(OBJLoader, '/models/sodacan.obj', undefined, (p) => {
+        setProgress(p.loaded / p.total);
+        console.log(p.loaded / p.total);
+    });
 
-    const texture = useLoader(RGBELoader, '/models/envmap.hdr', undefined, (p) => console.log(p));
+    const texture = useLoader(RGBELoader, '/models/envmap.hdr');
 
     const material = new MeshPhysicalMaterial({
         color: 0xffffff,
@@ -27,7 +32,7 @@ const Component: React.FC = () => {
     });
 
     return (
-        <primitive
+        <motion.primitive
             object={model}
             receiveShadow
             castShadow
@@ -38,7 +43,7 @@ const Component: React.FC = () => {
             rotation-z={.05}
             material={material}
         />
-    )
+    );
 }
 
 export default Component;
