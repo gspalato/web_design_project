@@ -37,7 +37,7 @@ const Component = () => {
             }}
         >
             <h3 className="fst-italic" style={{ color: '#000' }}>B0NK!</h3>
-            <nav className="navbar">
+            <nav className="navbar navbar-expand-md">
                 <ul className="nav d-flex gap-4">
                     {
                         routes.map((route, i) => (

@@ -8,6 +8,7 @@ import { useSpring } from "@react-spring/three";
 import { useCan } from "@/lib/providers/CanProvider";
 import { useMotionValue, useMotionValueEvent, useTransform } from "framer-motion";
 import Button from "@/components/Button";
+import { RICK_ROLL } from "@/constants";
 
 const flavors = [
     {
@@ -104,7 +105,12 @@ const Component = () => {
                                     <p style={{ color: '#fff', maxWidth: '40rem' }} className="fs-4">{flavor.description}</p>
                                     <p style={{ color: '#fff', maxWidth: '40rem', margin: 0 }} className="fs-6">Ingredients: {flavor.ingredients}</p>
                                 </div>
-                                <Button style={{ background: flavor.color, fontSize: '3rem' }}>Buy</Button>
+                                <Button
+                                    style={{ background: flavor.color, fontSize: '3rem' }}
+                                    to={RICK_ROLL}
+                                >
+                                    Buy
+                                </Button>
                             </div>
                         </SwiperSlide>
                     ))

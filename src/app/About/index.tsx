@@ -1,7 +1,36 @@
 import Button from "@/components/Button";
 import Page from "@/components/Page";
+import ProfileCard from "@/components/ProfileCard";
 import { useCan } from "@/lib/providers/CanProvider";
 import { useEffect } from "react";
+
+const authors = [
+    {
+        image: 'https://cdn.discordapp.com/avatars/341377366079045632/daddca9bf34e319abe2c7618d9343739?size=1024',
+        name: 'Gabriel Spalato',
+        description: '...'
+    },
+    {
+        image: '',
+        name: 'Enrico',
+        description: '...'
+    },
+    {
+        image: '',
+        name: 'Luis Zocca',
+        description: '...'
+    },
+    {
+        image: '/img/kauan.jpg',
+        name: 'Kauan Freitas',
+        description: '...'
+    },
+    {
+        image: '',
+        name: 'João Victor',
+        description: '...'
+    }
+]
 
 const Component = () => {
     const { setVisible } = useCan();
@@ -13,8 +42,12 @@ const Component = () => {
     }, []);
 
     return (
-        <Page className="d-flex align-items-center justify-content-center flex-column">
-            <div className="text-column w-75">
+        <Page
+            className="d-flex align-items-center flex-column pt-4"
+            style={{ marginTop: '6rem' }}
+            heightType="auto"
+        >
+            <div className="text-column w-75 pb-5 d-flex flex-column align-items-center">
                 <h1 style={{ color: '#000' }}>About us</h1>
                 <p>
                     We are a conceptual and very trustworthy soft drink brand created by the group of friends and students who name themselves "MISFITS".
@@ -27,7 +60,22 @@ const Component = () => {
                     What? You don't know what React is? Silly you! React is a JS framework that allows you to create UIs by reusing components,
                     while introducing tools to mantain and update state. 
                 </p>
-            </div>
+           </div>
+           <div className="w-75 d-flex flex-column justify-content-center align-items-center">
+                <h1 style={{ color: '#000' }}>Authors</h1>
+                <div className="w-75 mx-auto px-4 pb-4 d-flex justify-content-center flex-row flex-wrap gap-4">
+                    {
+                        authors.map((author, index) => (
+                            <ProfileCard
+                                key={index}
+                                src={author.image}
+                                name={author.name}
+                                description={author.description}
+                            />
+                        ))
+                    }
+                </div>
+           </div>
         </Page>
     );
 }

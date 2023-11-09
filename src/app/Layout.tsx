@@ -19,7 +19,7 @@ const Layout: React.FC<React.PropsWithChildren> = () => {
             <AnimatePresence mode='wait'>
                 {
                     background &&
-                        <motion.div className="h-100 w-100 position-absolute" initial={{ opacity: 0 }} animate={{ background, opacity: 1 }} exit={{ opacity: 0 }} />
+                        <motion.div className="h-100 w-100 position-fixed" initial={{ opacity: 0 }} animate={{ background, opacity: 1 }} exit={{ opacity: 0 }} />
                 }
             </AnimatePresence>
             <motion.div 
@@ -31,10 +31,10 @@ const Layout: React.FC<React.PropsWithChildren> = () => {
             </motion.div>
             <div className="pb-0 vh-100 w-100 position-absolute overflow-y-scroll">
                 <Header />
-                <main className="d-flex justify-content-center align-items-center flex-column h-100 w-100">
+                <main className="d-flex justify-content-center align-items-center flex-column min-vh-100 w-100">
                     <App />
+                    <Footer />
                 </main>
-                <Footer />
             </div>
         </BrowserRouter>
     )
