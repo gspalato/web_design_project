@@ -1,12 +1,23 @@
 import { useFrame } from "@react-three/fiber";
-import { useMemo, useRef } from "react"
+import { useRef } from "react"
 import { useLoader } from '@react-three/fiber'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
-import { Mesh, MeshPhysicalMaterial, MeshStandardMaterial, Vector3 } from "three";
+import { MeshPhysicalMaterial,  Vector3 } from "three";
+import { RGBELoader } from "three/examples/jsm/Addons.js";
 
 const Component: React.FC = () => {
     const model = useLoader(OBJLoader, '/models/sodacan.obj', undefined, (p) => console.log(p));
-    const material = new MeshPhysicalMaterial({ color: 0xffffff, metalness: 1, sheen: 1, specularIntensity: .25 });
+
+    const texture = useLoader(RGBELoader, '/models/envmap.hdr', undefined, (p) => console.log(p));
+
+    const material = new MeshPhysicalMaterial({
+        color: 0xffffff,
+        metalness: 1,
+        roughness: 0,
+        sheen: 1,
+        iridescence: .5,
+        envMap: texture
+    });
 
     const mesh = useRef<any>();
 
