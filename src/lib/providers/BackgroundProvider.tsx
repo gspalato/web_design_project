@@ -1,15 +1,13 @@
 import { createContext, useContext, useState } from "react";
 
-const MainBackground = "var(--background)";
-
 type BackgroundContextData = {
-    background: string;
+    background: string | undefined;
     setBackground: (background: string) => void;
     resetBackground: () => void;
 };
 
 const BackgroundContext = createContext<BackgroundContextData>({
-    background: MainBackground,
+    background: undefined,
     setBackground: () => {},
     resetBackground: () => {}
 } as any);
@@ -17,16 +15,15 @@ const BackgroundContext = createContext<BackgroundContextData>({
 const BackgroundProvider: React.FC<React.PropsWithChildren> = (props) => {
     const { children } = props;
 
-    const [background, setBackground] = useState<string>("");
+    const [background, setBackground] = useState<string | undefined>();
 
-    const setBackgroundRootProxy = (background: string) => {
-        const root = document.getElementById('root');
-        if (root) root.style.background = background;
+    const setBackgroundRootProxy = (background: string | undefined) => {
+        //const root = document.getElementById('root');
+        //if (root) root.style.background = background ?? "";
         setBackground(background);
-        console.log(background)
     };
 
-    const resetBackground = () => setBackgroundRootProxy(MainBackground);
+    const resetBackground = () => setBackgroundRootProxy(undefined);
 
     return (
         <BackgroundContext.Provider value={{ background, setBackground: setBackgroundRootProxy, resetBackground }}>

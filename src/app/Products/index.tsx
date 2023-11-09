@@ -19,25 +19,25 @@ const flavors = [
         name: 'Lemon',
         color: '#00ff22',
         /* background: '#00ff00', */
-        background: "linear-gradient(45deg, #00ab50 35%, #00d19d 100%)",
+        background: "linear-gradient(45deg, #00ab50, #00d19d)",
         description: 'Intense lemon flavor in every sip!'
     },
     {
         name: 'Blueberry',
         color: '#6600ff',
-        background: "linear-gradient(45deg, rgba(49,37,129,1) 35%, rgba(119,37,129,1) 100%)",  
+        background: "linear-gradient(45deg, rgba(49,37,129,1), rgba(119,37,129,1))",  
         description: 'Grapes but poggers!'
     },
     {
         name: 'Beans',
         color: '#964b00',
-        background: "linear-gradient(45deg, rgba(67,45,39,1) 35%, rgba(140,104,59,1) 100%)",
+        background: "linear-gradient(45deg, rgba(67,45,39,1), rgba(140,104,59,1))",
         description: 'Beans, the new sensation in your mouth! 🤤'
     },
     {
         name: 'Pineapple',
         color: '#e3c230',
-        background: "linear-gradient(45deg, #e3c230 50%, rgba(133,232,111,1) 100%)",
+        background: "linear-gradient(45deg, #e3c230, rgba(133,232,111,1))",
         description: "A mix of sweet with a sour touch.\nA real happiness punch.\n(Unless you're allergic.)"
     }
 ]
