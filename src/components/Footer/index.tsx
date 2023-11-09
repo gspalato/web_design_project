@@ -11,7 +11,7 @@ const Component: React.FC<FooterProps> = (props) => {
 
     return (
         <footer className="w-100 d-flex justify-content-center align-items-center" style={{ height: '5rem', ...style }}>
-            <p className={classes("mb-0 align-top lh-1 fs-6", Styles.footerText)}>© B0NK! Soft Drinks and Lead Pipes | 1983 - 2023</p>
+            <p className={classes("mb-0 align-top lh-1 fs-6", Styles.footerText)}>© B0NK! Soft Drinks and Lead Pipes | 1984 - 2023</p>
         </footer>
     );
 }

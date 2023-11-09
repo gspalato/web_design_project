@@ -36,7 +36,7 @@ const Component = () => {
                 transition: 'background 0.25s ease-in-out'
             }}
         >
-            <h3 className="fst-italic" style={{ color: '#000' }}>B0NK!</h3>
+            <h3 className="fst-italic m-0" style={{ color: '#000' }}>B0NK!</h3>
             <nav className="navbar navbar-expand-md">
                 <ul className="nav d-flex gap-4">
                     {

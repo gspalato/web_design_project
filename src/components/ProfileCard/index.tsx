@@ -30,7 +30,7 @@ const Component: React.FC<ProfileCardProps> = (props) => {
                 }}
             />
             <h5 className="mb-0 text-capitalize" >{name}</h5>
-            <p className="mb-0 fs-5">{description}</p>
+            <p className="mb-0 fs-6 text-center">{description}</p>
         </motion.div>
     )
 }

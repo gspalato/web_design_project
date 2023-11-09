@@ -8,27 +8,27 @@ const authors = [
     {
         image: 'https://cdn.discordapp.com/avatars/341377366079045632/daddca9bf34e319abe2c7618d9343739?size=1024',
         name: 'Gabriel Spalato',
-        description: '...'
+        description: 'idealized B0NK! Soft Drinks and Lead Pipes™ in 1984.'
     },
     {
-        image: '',
+        image: '/img/enrico.jpg',
         name: 'Enrico',
-        description: '...'
+        description: "fifa pro player (+3000h)\nalso my favorite flavor's the bean one."
     },
     {
-        image: '',
-        name: 'Luis Zocca',
-        description: '...'
+        image: 'https://cdn.discordapp.com/avatars/416747928560992282/074acc330469182841ad88fc4e886383?size=1024',
+        name: 'Luiz Zocca',
+        description: 'number one fan of the C language.'
     },
     {
         image: '/img/kauan.jpg',
         name: 'Kauan Freitas',
-        description: '...'
+        description: 'studying computer engineering at facens. broken brain.'
     },
     {
-        image: '',
+        image: '/img/engler.png',
         name: 'João Victor',
-        description: '...'
+        description: 'the tilted towers bot.'
     }
 ]
 
