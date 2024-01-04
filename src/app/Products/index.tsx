@@ -1,17 +1,13 @@
 import Page from "@/components/Page";
-import SodaCanScene from "@/components/SodaCanScene";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel } from 'swiper/modules'
 import 'swiper/css';
 import { useBackground } from "@/lib/providers/BackgroundProvider";
-import { useSpring } from "@react-spring/three";
 import { useCan } from "@/lib/providers/CanProvider";
 import { motion, useMotionValue, useMotionValueEvent, useTransform } from "framer-motion";
 import Button from "@/components/Button";
 import { RICK_ROLL } from "@/constants";
-import { Carousel } from "bootstrap";
-import CarouselButton from "./CarouselButton";
 
 const flavors = [
     {
@@ -109,7 +105,6 @@ const Component = () => {
                                 </div>
                                 <Button
                                     style={{ background: flavor.color, fontSize: '3rem' }}
-                                    to={RICK_ROLL}
                                 >
                                     Buy
                                 </Button>
